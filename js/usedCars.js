@@ -96,7 +96,7 @@ const usedCars = [
     price: 19000,
     color: "Blue",
     gasMileage: "24 mpg city, 31 mpg highway",
-    image: "2017-Mazda-CX-5-Blue.png",
+    image: "2017-Mazda-CX5-Blue.png",
     alt: "2017 Mazda CX-5 in Blue",
   },
   {
