@@ -421,3 +421,9 @@ footer .right .operation .hours p {
   padding: 0px 0px 20px 10px;
   overflow-x: hidden;
 }
+.hero #result p{
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--font-color-secondary);
+}
+

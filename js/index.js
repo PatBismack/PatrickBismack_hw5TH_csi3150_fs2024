@@ -1,48 +1,28 @@
 // Import JS object Literal
 import { usedCars } from "./usedCars.js";
-// get form element from html
+// get search element from html
 const form = document.getElementById("search-form");
+// get filter elements from html
 const filterYear = document.getElementById("filter-year");
 const filterPrice = document.getElementById("filter-price");
 const filterMileage = document.getElementById("filter-mileage");
 const filterColor = document.getElementById("filter-color");
 const filterMake = document.getElementById("filter-make");
-// get user search input
+// get user search input from search bar
 const query = document.getElementById("search-input");
 // grab the html container where results will be published
 const result = document.getElementById("result");
-
-let isSearching = false;
 
 // function to clear results
 function clearResults() {
   result.innerHTML = "";
 }
-// function to fetch and show results
-async function fetchAndShowResult(usedCars) {
-  const data = await fetchData(usedCars);
-  if (data && data.results) {
-    showResults(data.results);
-  }
-}
-// function to fetch data from the usedCars.js
-async function fetchData(usedCars) {
-  try {
-    let response = await fetch(usedCars);
-    if (!response.ok) {
-      throw new Error("Something went wrong, please try again later");
-    }
-  } catch (err) {
-    console.error(err);
-    return null;
-  }
-}
+
 // function to display results on the page
 function showResults(item) {
   const newContent = item.map(createCarCard).join("");
   result.innerHTML += newContent || "<p> No Results Found. Search again. </p>";
 }
-
 // create dynamic car details cards
 function createCarCard(car) {
   // destructure car object from usedCars.js
@@ -83,7 +63,9 @@ function searchCars(
   selectedColors,
   selectedMake
 ) {
+  // Get the term from the search bar split by " "
   const searchTerms = query.toLowerCase().split(" ");
+  // for each car check if the search term matches the car's make, model, color, or year in any order
   return usedCars.filter((car) => {
     const matchesSearchTerms = searchTerms.every((term) => {
       return (
@@ -93,20 +75,21 @@ function searchCars(
         car.year.toString().includes(term)
       );
     });
-
+    // Check if vehcile falls within the min year and max year range
     const matchesYearRange =
       (!minYear || car.year >= minYear) && (!maxYear || car.year <= maxYear);
-
+    // Check if the vehicle falls within the min price and max price range
     const matchesPriceRange =
       (!minPrice || car.price >= minPrice) &&
       (!maxPrice || car.price <= maxPrice);
-
+    // Check if the vehicle falls within the min mileage and max mileage range
     const matchesMileageRange =
       (!minMileage || car.mileage >= minMileage) &&
       (!maxMileage || car.mileage <= maxMileage);
-
+    // Check if the vehicle color matches the selected colors
     const matchesColorSelection =
       selectedColors.length === 0 || selectedColors.includes(car.color);
+    // Check if the vehicle make matches the selected makes
     const matchesMakeSelection =
       selectedMake.length === 0 || selectedMake.includes(car.make);
     return (
@@ -123,33 +106,32 @@ function searchCars(
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   clearResults();
-  isSearching = true;
 
   // Get values from the year filter
   const minYear = document.getElementById("min-year").value;
   const maxYear = document.getElementById("max-year").value;
-  console.log(`Min Year: ${minYear}, Max Year: ${maxYear}`);
+  // console.log(`Min Year: ${minYear}, Max Year: ${maxYear}`);
 
   // Get values from the price filter
   const minPrice = document.getElementById("min-price").value;
   const maxPrice = document.getElementById("max-price").value;
-  console.log(`Min Price: ${minPrice}, Max Price: ${maxPrice}`);
+  // console.log(`Min Price: ${minPrice}, Max Price: ${maxPrice}`);
 
   // Get values from the mileage filter
   const minMileage = document.getElementById("min-mileage").value;
   const maxMileage = document.getElementById("max-mileage").value;
-  console.log(`Min Mileage: ${minMileage}, Max Mileage: ${maxMileage}`);
+  // console.log(`Min Mileage: ${minMileage}, Max Mileage: ${maxMileage}`);
 
   // Get Values from the color input
   const selectedColors = Array.from(
     document.querySelectorAll('.filter-color input[type="checkbox"]:checked')
   ).map((checkbox) => checkbox.value);
-  console.log(selectedColors);
+  // console.log(selectedColors);
   // Get values from the make input
   const selectedMake = Array.from(
     document.querySelectorAll('.filter-make input[type="checkbox"]:checked')
   ).map((checkbox) => checkbox.value);
-  console.log(selectedMake);
+  // console.log(selectedMake);
 
   const queryValue = query.value;
   let filteredCars = searchCars(
@@ -164,28 +146,31 @@ form.addEventListener("submit", async (event) => {
     selectedMake
   );
   showResults(filteredCars);
-  console.log(filteredCars);
-  isSearching = false;
+  // console.log(filteredCars);
 });
+// Detect changeOn event on the year filter
 filterYear.addEventListener("change", async (event) => {
   form.dispatchEvent(new Event("submit"));
 });
+// Detect changeOn event on the price filter
 filterPrice.addEventListener("change", async (event) => {
   form.dispatchEvent(new Event("submit"));
 });
+// Detect changeOn event on the mileage filter
 filterMileage.addEventListener("change", async (event) => {
   form.dispatchEvent(new Event("submit"));
 });
+// Detect changeOn event on the color filter
 filterColor.addEventListener("change", async (event) => {
   form.dispatchEvent(new Event("submit"));
 });
+// Detect changeOn event on the make filter
 filterMake.addEventListener("change", async (event) => {
   form.dispatchEvent(new Event("submit"));
 });
 // initialize the page
 async function init() {
   clearResults();
-  isSearching = false;
   await showResults(usedCars);
 }
 
