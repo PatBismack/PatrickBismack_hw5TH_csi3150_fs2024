@@ -2,8 +2,11 @@
 import { usedCars } from "./usedCars.js";
 // get form element from html
 const form = document.getElementById("search-form");
-// Test
-const filters = document.getElementById("filter-year");
+const filterYear = document.getElementById("filter-year");
+const filterPrice = document.getElementById("filter-price");
+const filterMileage = document.getElementById("filter-mileage");
+const filterColor = document.getElementById("filter-color");
+const filterMake = document.getElementById("filter-make");
 // get user search input
 const query = document.getElementById("search-input");
 // grab the html container where results will be published
@@ -164,7 +167,19 @@ form.addEventListener("submit", async (event) => {
   console.log(filteredCars);
   isSearching = false;
 });
-filters.addEventListener("change", async (event) => {
+filterYear.addEventListener("change", async (event) => {
+  form.dispatchEvent(new Event("submit"));
+});
+filterPrice.addEventListener("change", async (event) => {
+  form.dispatchEvent(new Event("submit"));
+});
+filterMileage.addEventListener("change", async (event) => {
+  form.dispatchEvent(new Event("submit"));
+});
+filterColor.addEventListener("change", async (event) => {
+  form.dispatchEvent(new Event("submit"));
+});
+filterMake.addEventListener("change", async (event) => {
   form.dispatchEvent(new Event("submit"));
 });
 // initialize the page
