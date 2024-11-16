@@ -419,4 +419,5 @@ footer .right .operation .hours p {
   justify-content: start;
   overflow: scroll;
   padding: 0px 0px 20px 10px;
+  overflow-x: hidden;
 }
