@@ -1,0 +1,422 @@
+/* Import Google API fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Reset default styling*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  /* Color Variables */
+  --bg-primary: #153131;
+  --bg-secondary: #aeb7b3;
+  --font-color-primary: #f4f4f9;
+  --font-color-secondary: #02111b;
+  --backup-color: #427777;
+}
+/* Style for body */
+body {
+  height: 100%;
+}
+/* Style for NavBar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 90px;
+  padding: 0px 50px;
+  background: var(--bg-primary);
+}
+/* Style for the Logo */
+.navbar img {
+  width: 173px;
+  height: 55px;
+  padding: 5px 20px;
+}
+/* Style for navbar items */
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.navbar ul li {
+  list-style: none;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--font-color-primary);
+  font-size: 22px;
+  font-weight: 300;
+  padding-right: 50px;
+  transition: color 0.3s ease;
+}
+/* Remove padding right right most child */
+.navbar ul li:last-child {
+  padding-right: 0px;
+}
+/* Style for the active link */
+.navbar ul li a:hover {
+  color: var(--backup-color);
+}
+/* Style for Call to Action */
+.navbar .cta-btn {
+  background: var(--backup-color);
+  color: var(--font-color-primary);
+  font-size: 22px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);
+}
+/* Transition for Call to Action */
+.navbar .cta-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--font-color-secondary);
+}
+/* Style for the Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: var(--font-color-primary);
+  padding-bottom: 10px;
+}
+.hero .filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+/* Style for the hero section title */
+.hero .filter h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--bg-primary);
+  padding: 10px 0px;
+}
+/* Style for the search bar */
+.hero .filter form {
+  display: flex;
+  max-width: 1000px;
+  padding-bottom: 10px;
+}
+.hero .filter form input {
+  width: 1000px;
+  max-width: 1000px;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 0.4rem 0 0 0.4rem;
+  border: 1px solid var(--bg-secondary);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+}
+/* Style for search button within search bar */
+.hero .filter .search-btn {
+  width: 200px;
+  background: var(--backup-color);
+  color: var(--font-color-primary);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0 0.4rem 0.4rem 0;
+  transition: all 0.3s ease;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+}
+/* Transition for search button */
+.hero .filter .search-btn:hover {
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-primary);
+}
+/* Style for footer */
+footer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: row;
+  background: var(--bg-primary);
+}
+/* Style for Contact info section */
+footer .left {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px 20px;
+}
+footer .left h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--font-color-primary);
+}
+footer .left p {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--font-color-primary);
+}
+/* Style for contact button */
+footer .left .contact-btn {
+  background: var(--backup-color);
+  color: var(--font-color-primary);
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);
+}
+/* Transition for contact button */
+footer .left .contact-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--font-color-secondary);
+}
+/* Style for hours section */
+footer .right {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px 20px;
+}
+footer .right h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--font-color-primary);
+}
+footer .operation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+footer .right .operation .days {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-right: 30px;
+}
+footer .right .operation .days p {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--font-color-primary);
+}
+footer .right .operation .hours {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+footer .right .operation .hours p {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--font-color-primary);
+  padding-right: 30px;
+}
+/* Style for the filter options and results */
+.hero .listing{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+/* Style for the filter card */
+.hero .listing .search-filters{
+  width: 20%;
+  height: 100%;
+  display: fixed;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 0 .4rem .4rem 0;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.hero .listing .search-filters h2{
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--font-color-secondary);
+  padding: 10px 0px;
+}
+.hero .listing .search-filters p{
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--bg-primary);
+}
+/* Style for the year filter */
+.hero .listing .search-filters .filter-year{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+/* style for the price filter */
+.hero .listing .search-filters .filter-price{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+/* style for the mileage filter */
+.hero .listing .search-filters .filter-mileage{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.hero .listing .search-filters input[type="number"]{
+  width: 100px;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 0.4rem;
+  border: 1px solid var(--bg-secondary);
+}
+/* style for the color filter */
+.hero .listing .search-filters .filter-color{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.hero .listing .search-filters .filter-color label{
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--font-color-secondary);
+  padding: 0px 7px;
+}
+/* Style for check boxes */
+.hero .listing .search-filters .filter-color input[type="checkbox"]{
+  accent-color: var(--backup-color);
+}
+/* Style for make filter */
+.hero .listing .search-filters .filter-make{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.hero .listing .search-filters .filter-make label{
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--font-color-secondary);
+  padding: 0px 10px;
+}
+/* Style for check boxes */
+.hero .listing .search-filters .filter-make input[type="checkbox"]{
+  accent-color: var(--backup-color);
+}
+/* Style for car details card */
+.hero .card {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);
+}
+/* Style for car img */
+.hero .card img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+/* Style for the car year, make, model and color */
+.hero .card .title {
+  display: flex;
+  align-items: baseline;
+  justify-self: start;
+  flex-direction: row;
+  padding-left: 10px;
+}
+.hero .card .title .year {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--bg-secondary);
+  padding-right: 5px;
+}
+.hero .card .title .make {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--font-color-secondary);
+  padding-right: 5px;
+}
+.hero .card .title .model {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--font-color-secondary);
+  padding-right: 5px;
+}
+.hero .card .title .color {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--font-color-secondary);
+}
+/* style for the car price, mileage and specs */
+.hero .card .details {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+.hero .card .details .price {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--font-color-secondary);
+}
+.hero .card .details .mileage {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--font-color-secondary);
+}
+.hero .card .details .mpg {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--font-color-secondary);
+}
+/* Style for more information button */
+.hero .card .info-btn {
+  width: 100%;
+  color: var(--font-color-primary);
+  font-size: 22px;
+  font-weight: 300;
+  text-align: center;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 10px;
+  background: var(--backup-color);
+  transition: all 0.3s ease;
+}
+/* Transition for the info button */
+.hero .card .info-btn:hover {
+  background: var(--bg-primary);
+}
+.hero #result {
+  display: flex;
+  width: 80vw;
+  height: 100vh;
+  gap: 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+  overflow: scroll;
+  padding: 0px 0px 20px 10px;
+}

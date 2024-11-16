@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Caravan</title>
+    <link rel="icon" href="./assets/image/favicon.png" type="image/png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <!-- JavaScript -->
+    <!-- <script type="module" src="./js/usedCars.js"></script> -->
+    <script type="module" src="./js/index.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <!-- Logo -->
+         <img src="./assets/image/logo.png" alt="Line art of a car with the text Car Caravan, used cars"/>
+        <!-- Navigation Bar -->
+         <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Pre-Owned</a>
+                </li>
+                <li>
+                    <a href="#">Specials</a>
+                </li>
+                <li>
+                    <a href="#">Finance</a>
+                </li>
+                <li>
+                    <a href="#">Service & Parts</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Call to Action -->
+         <button class="cta-btn">Call Us</button>
+    </header>
+    <main class="hero">
+        <section class="filter">
+            <h1>Used Cars for Sale in Rochester Hills, MI</h1>
+            <form id="search-form">
+                <!-- This can be replaced with any input type  -->
+                <input type="text" name="search-input" id="search-input" placeholder="Search by Make, Model, Year or Color"/>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </section>
+        <div class="listing">
+            <div class="search-filters">
+                <h2>Year</h2>
+                <form class="filter-year" id="filter-year">
+                    <input type="number" name="min-year" id="min-year" min="1885" max="2025" placeholder="Min Year" />
+                    <p>-</p>
+                    <input type="number" name="max-year" id="max-year" min="1885" max="2026" placeholder="Max Year"/>
+                </form>
+                <h2>Price</h2>
+                <form class="filter-price"id="filter-price">
+                    <input type="number" name="min-price" id="min-price" min="0" placeholder="Min Price" />
+                    <p>-</p>
+                    <input type="number" name="max-price" id="max-price" min="0" placeholder="Max Price"/>
+                </form>
+                <h2>Mileage</h2>
+                <form class="filter-mileage" id="filter-mileage">
+                    <input type="number" name="min-mileage" id="min-mileage" min="0" placeholder="Min Miles" />
+                    <p>-</p>
+                    <input type="number" name="max-mileage" id="max-mileage" min="0" placeholder="Max Miles"/>
+                </form>
+                <h2>Color</h2>
+                <form class="filter-color" id="filter-color">
+                    <label>White</label>
+                    <input type="checkbox" name="white-color" id="white-color" placeholder="White" value="White"/>
+                    <label>Gray</label>
+                    <input type="checkbox" name="gray-color" id="gray-color" placeholder="Gray" value="Gray"/>
+                    <label>Black</label>
+                    <input type="checkbox" name="black-color" id="black-color" placeholder="Black" value="Black"/>
+                    <label>Silver</label>
+                    <input type="checkbox" name="silver-color" id="silver-color" placeholder="Silver" value="Silver"/>
+                    <label>Red</label>
+                    <input type="checkbox" name="red-color" id="red-color" placeholder="Red" value="Red"/>
+                    <label>Blue</label>
+                    <input type="checkbox" name="blue-color" id="blue-color" placeholder="Blue" value="Blue"/>
+                    <label>Green</label>
+                    <input type="checkbox" name="green-color" id="green-color" placeholder="Green" value="Green"/>
+                </form>
+                <h2>Make</h2>
+                <form class="filter-make" id="filter-make">
+                    <label>Chevrolet</label>
+                    <input type="checkbox" name="chevrolet" id="chevrolet" placeholder="Chevrolet" value="Chevrolet"/>
+                    <label>Ford</label>
+                    <input type="checkbox" name="ford" id="ford" placeholder="Ford" value="Ford"/>
+                    <label>Toyota</label>
+                    <input type="checkbox" name="toyota" id="toyota" placeholder="Toyota" value="Toyota"/>
+                    <label>Honda</label>
+                    <input type="checkbox" name="honda" id="honda" placeholder="Honda" value="Honda"/>
+                    <label>Nissan</label>
+                    <input type="checkbox" name="nissan" id="nissan" placeholder="Nissan" value="Nissan"/>
+                    <label>Volkswagen</label>
+                    <input type="checkbox" name="volkswagen" id="volkswagen" placeholder="Volkswagen" value="Volkswagen"/>
+                    <label>Hyundai</label>
+                    <input type="checkbox" name="hyundai" id="hyundai" placeholder="Hyundai" value="Hyundai"/>
+                    <label>Subaru</label>
+                    <input type="checkbox" name="subaru" id="subaru" placeholder="Subaru" value="Subaru"/>
+                    <label>Mazda</label>
+                    <input type="checkbox" name="mazda" id="mazda" placeholder="Mazda" value="Mazda"/>
+                    <label>Kia</label>
+                    <input type="checkbox" name="kia" id="kia" placeholder="Kia" value="Kia"/>
+                    <label>Dodge</label>
+                    <input type="checkbox" name="dodge" id="dodge" placeholder="Dodge" value="Dodge"/>
+                    <label>Cadillac</label>
+                    <input type="checkbox" name="cadillac" id="cadillac" placeholder="Cadillac" value="Cadillac"/>
+                    <label>Jaguar</label>
+                    <input type="checkbox" name="jaguar" id="jaguar" placeholder="Jaguar" value="Jaguar"/>
+                    <label>Tesla</label>
+                    <input type="checkbox" name="tesla" id="tesla" placeholder="Tesla" value="Tesla"/>
+                    <label>Porsche</label>
+                    <input type="checkbox" name="porsche" id="porsche" placeholder="Porsche" value="Porsche"/>
+                    <label>Lexus</label>
+                    <input type="checkbox" name="lexus" id="lexus" placeholder="Lexus" value="Lexus"/>
+                    <label>BMW</label>
+                    <input type="checkbox" name="bmw" id="bmw" placeholder="BMW" value="BMW"/>
+                </form>
+            
+        </div>
+        <!-- Placeholder html local for dynamic contents -->
+         <div id="result">
+            
+         </div>
+    </main>
+    <footer>
+        <section class="left">
+            <h2>Car Caravan</h2>
+            <p>1234 Engine Road</p>
+            <p>Rochester Hills, MI 48309</p>
+            <br>
+            <p>Sales: 248-123-789</p>
+            <p>Service: 248-123-790</p>
+            <p>Parts: 248-123-689</p>
+            <button class="contact-btn">Contact Us</button>
+        </section>
+        <section class="right">
+            <h2>Hours</h2>
+            <div class="operation">
+                <div class="days">
+                <p>Monday</p>
+                <p>Tuesday</p>
+                <p>Wednesday</p>
+                <p>Thursday</p>
+                <p>Friday</p>
+                <p>Saturday</p>
+                <p>Sunday</p>
+                </div>
+                <div class="hours">
+                    <p>9:00am - 7:00pm</p>
+                    <p>9:00am - 7:00pm</p>
+                    <p>9:00am - 7:00pm</p>
+                    <p>9:00am - 7:00pm</p>
+                    <p>9:00am - 7:00pm</p>
+                    <p>9:00am - 7:00pm</p>
+                    <p>closed</p>
+                </div>
+            </div>
+    </footer>
+</body>
+</html>
